@@ -6,7 +6,7 @@ type opcoes = {
     headers?: Record<string, string>;
 }
 
-export async function fetchData(caminho : string, options? : opcoes) {
+export async function fetchData<T>(caminho : string, options? : opcoes): Promise<T> {
     const url = `${BASE_URL}${caminho}`;
     const { method = "POST", body, headers = {} } = options || {};
     const finalHeaders = {
