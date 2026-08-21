@@ -1,0 +1,210 @@
+/*----------------- FUNDO register -----------------*/
+.register-wrapper {
+  background-color: var(--bg);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blur-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blur-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/*----------------- CONTAINER register -----------------*/
+.register-container {
+  width: 1120px;
+  height: 680px;
+  border-radius: 34px;
+  display: flex;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/*----------------- CONTAINER ESQUERDO -----------------*/
+.container-left {
+  width: 45%;
+  background: linear-gradient(
+    180deg,
+    var(--brand-from) 0%,
+    var(--brand-to) 100%
+  );
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bubble-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.small-ring {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+}
+
+.big-ring {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 38px;
+}
+
+.logo-title {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.tagline {
+  color: var(--accent);
+  font-size: 11.5px;
+  margin-bottom: 16px;
+}
+
+.welcome-title {
+  color: #fff;
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.register-illustration-img {
+  width: 306px;
+  display: block;
+  margin: 0 auto;
+}
+
+/*----------------- CONTAINER DIREITO -----------------*/
+.container-right {
+  background-color: var(--field-bg);
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 72px;
+}
+
+.register-form{
+    margin-top: 50px;
+}
+
+.form-header {
+  margin-bottom: 28px;
+}
+
+.form-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffff;
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  color: var(--text-muted);
+  font-size: 14.5px;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.register-error {
+  padding: 12px 18px;
+  border-radius: 16px;
+  background: rgba(244, 162, 140, 0.12);
+  border: 1px solid rgba(244, 162, 140, 0.4);
+  color: #f4a28c;
+  font-size: 13.5px;
+  font-weight: 400;
+}
+
+.register-text {
+    font-size: 14px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.terms {
+    margin-bottom: 32px;
+    margin-top: 20px;
+}
+
+.register-text a {
+    text-decoration: none;
+    color: var(--field-border-active);
+    font-weight: semi-bold;
+
+}
+
+@media (max-width: 900px) {
+  .register-wrapper {
+    overflow: visible;
+    overflow-x: hidden;
+  }
+
+  .register-container {
+    flex-direction: column;
+    min-height: 100%;
+    overflow: visible;
+    border-radius: 0px;
+    max-width: 100vw;
+  }
+
+  .container-left {
+    min-height: 456px;
+    min-width: 100%;
+    background: transparent;
+  }
+
+  .small-ring {
+    display: none;
+  }
+
+  .welcome-section {
+    text-align: center;
+  }
+
+  .register-illustration-img {
+    display: none;
+  }
+
+  .container-right {
+    min-width: 100%;
+    border-radius: 34px 34px 0 0;
+    padding: 28px;
+  }
+
+  .register-form{
+    margin-top: 32px;
+  }
+
+  .terms{
+    margin-bottom: 0px;
+  }
+}
