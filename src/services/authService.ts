@@ -7,14 +7,14 @@ import type {
 
 const USER_ROLE = 1;
 
-export async function login(request: LoginRequest): Promise<AuthResponse> {
+async function login(request: LoginRequest): Promise<AuthResponse> {
   return fetchData<AuthResponse>("/api/auth/login", {
     method: "POST",
     body: request,
   });
 }
 
-export async function register(
+async function register(
   request: Omit<RegisterRequest, "role">,
 ): Promise<AuthResponse> {
   return fetchData<AuthResponse>("/api/auth/register", {
@@ -22,3 +22,5 @@ export async function register(
     body: { ...request, role: USER_ROLE },
   });
 }
+
+export const authService = { login, register }
