@@ -20,7 +20,6 @@ export function Login() {
     setLoading(true);
     try {
       await login(email, password);
-      // TODO: guardar token no AuthContext
       navigate("/");
     } catch (error) {
       if (error instanceof ApiError) {
@@ -52,7 +51,7 @@ export function Login() {
           <div className="illustration-wrapper">
             <img
               src="/auth/ilustracao-login.svg"
-              className="illustration-img"
+              className="login-illustration-img"
             />
           </div>
           <img src="/auth/small-ring.svg" className="small-ring" />
