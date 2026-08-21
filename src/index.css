@@ -1,5 +1,22 @@
+:root {
+  --bg: #061617;
+  --panel-bg: #0c2223;
+  --brand-from: #0c3a3c;
+  --brand-to: #03191a;
+  --field-bg: #0f2a2c;
+  --field-border: #1e4143;
+  --field-border-active: #2fd4c4;
+  --text-strong: #eaf6f4;
+  --text-muted: #7e9e9c;
+  --text-faint: #8fbdb8;
+  --accent: #5fe0d2;
+  --accent-strong: #22b7aa;
+  --accent-dark: #042221;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
 }
