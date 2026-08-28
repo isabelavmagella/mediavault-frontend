@@ -1,0 +1,186 @@
+.app-shell {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background: var(--bg);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-shell__ambient {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 640px;
+  height: 640px;
+}
+
+.app-shell__ambient--tl {
+  left: -320px;
+  top: -300px;
+}
+
+.app-shell__ambient--br {
+  right: -320px;
+  bottom: -300px;
+}
+
+/* ---------- Sidebar (desktop) ---------- */
+
+.app-shell__sidebar {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 270px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 32px 20px 20px;
+  background: var(--panel-bg);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.shell-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 6px 16px;
+  text-decoration: none;
+}
+
+.shell-logo__mark {
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.shell-logo__text {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-strong);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+.shell-upload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent-strong);
+  color: var(--accent-dark);
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-radius 0.15s ease;
+}
+
+.shell-upload-button:hover {
+  background: var(--accent);
+}
+
+.shell-upload-button__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.shell-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 8px;
+}
+
+.shell-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 10px;
+  color: var(--text-faint);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.shell-nav-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-strong);
+}
+
+.shell-nav-item__icon {
+  flex-shrink: 0;
+}
+
+.shell-nav-item--active {
+  background: rgba(34, 183, 170, 0.14);
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.shell-nav-item--active:hover {
+  background: rgba(34, 183, 170, 0.14);
+}
+
+.shell-nav-item--active .shell-nav-item__icon {
+  color: var(--accent);
+}
+
+/* ---------- Topbar (mobile) ---------- */
+
+.app-shell__topbar {
+  display: none;
+}
+
+.shell-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 10px;
+  background: var(--panel-bg);
+  color: var(--text-strong);
+  cursor: pointer;
+}
+
+.shell-menu-toggle--open {
+  border-radius: 10px 10px 0 0;
+}
+
+.shell-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  background: rgba(3, 12, 12, 0.5);
+}
+
+.shell-menu-panel {
+  position: absolute;
+  z-index: 9;
+  top: 100%;
+  left: 20px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--panel-bg);
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 0px 16px 32px 0px rgba(5, 41, 41, 0.35);
+}
+
+.app-shell__content {
+    width: 100%;
+}
