@@ -11,6 +11,7 @@ async function login(request: LoginRequest): Promise<AuthResponse> {
   return fetchData<AuthResponse>("/api/auth/login", {
     method: "POST",
     body: request,
+    auth: false,
   });
 }
 
@@ -20,6 +21,7 @@ async function register(
   return fetchData<AuthResponse>("/api/auth/register", {
     method: "POST",
     body: { ...request, role: USER_ROLE },
+    auth: false,
   });
 }
 

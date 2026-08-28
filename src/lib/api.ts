@@ -1,9 +1,12 @@
+import { getToken } from "./auth";
+
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 type opcoes = {
   method?: string;
   body?: unknown;
   headers?: Record<string, string>;
+  auth?: boolean;
 };
 
 export class ApiError extends Error {
@@ -29,9 +32,14 @@ export async function fetchData<T>(
   options?: opcoes,
 ): Promise<T> {
   const url = `${BASE_URL}${caminho}`;
-  const { method = "POST", body, headers = {} } = options || {};
+  const { method = "POST", body, auth = true, headers = {} } = options || {};
+  let token: string | null = null;
+  if (auth === true) {
+    token = getToken();
+  }
   const finalHeaders = {
     "Content-Type": "application/json",
+    ...(token && { Authorization: `Bearer ${token}` }),
     ...headers,
   };
   const response = await fetch(url, {
@@ -46,11 +54,11 @@ export async function fetchData<T>(
 
     try {
       body = await response.json();
-      if (typeof body === "object" && body !== null && "message" in body){
+      if (typeof body === "object" && body !== null && "message" in body) {
         message = String(body.message);
       }
     } catch {
-        // corpo não é JSON; mantém o fallback
+      // corpo não é JSON; mantém o fallback
     }
     throw new ApiError(message, response.status, body);
   }
