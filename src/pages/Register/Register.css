@@ -1,4 +1,4 @@
-/*----------------- FUNDO register -----------------*/
+/*----------------- FUNDO REGISTER -----------------*/
 .register-wrapper {
   background-color: var(--bg);
   height: 100vh;
@@ -21,7 +21,7 @@
   right: 0;
 }
 
-/*----------------- CONTAINER register -----------------*/
+/*----------------- CONTAINER REGISTER -----------------*/
 .register-container {
   width: 1120px;
   height: 680px;
