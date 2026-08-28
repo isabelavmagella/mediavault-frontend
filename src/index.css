@@ -1,6 +1,7 @@
 :root {
   --bg: #061617;
   --panel-bg: #0c2223;
+  --table-head-bg: #2A4542;
   --brand-from: #0c3a3c;
   --brand-to: #03191a;
   --field-bg: #0f2a2c;
@@ -12,6 +13,10 @@
   --accent: #5fe0d2;
   --accent-strong: #22b7aa;
   --accent-dark: #042221;
+
+  --expirado: #F87171;
+  --expirando: #FBBF24;
+  --valido: #34D399;
 }
 
 * {
@@ -20,4 +25,66 @@
   padding: 0;
   font-family: "Inter", sans-serif;
   scrollbar-width: none;
+  color: var(--text-strong);
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.mensagem-erro {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1rem 0;
+    color: #d32f2f;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.expirado {
+  color: var(--expirado);
+}
+
+.expirando {
+  color: var(--expirando);
+}
+
+.valido {
+  color: var(--valido);
+}
+
+.link {
+  text-decoration: none;
 }
