@@ -53,13 +53,16 @@
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--text-muted);
   cursor: pointer;
+}
+
+.input-toggle svg {
+  stroke: var(--text-muted);
   transition: color 0.15s ease;
 }
 
-.input-toggle:hover {
-  color: var(--text-strong);
+.input-toggle:hover svg {
+  stroke: var(--text-strong);
 }
 
 .input-toggle:focus-visible {
