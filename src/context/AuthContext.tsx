@@ -1,9 +1,4 @@
-import {
-  useCallback,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { useCallback, useMemo, useState, type ReactNode } from "react";
 import {
   clearToken,
   clearUser,
@@ -58,13 +53,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUserState(response.user);
   }, []);
 
-  const register = useCallback(async (nome: string, email: string, password: string) => {
-    const response = await authService.register({ nome, email, password });
-    setToken(response.token);
-    setUser(response.user);
-    setTokenState(response.token);
-    setUserState(response.user);
-  }, []);
+  const register = useCallback(
+    async (nome: string, email: string, password: string) => {
+      const response = await authService.register({ nome, email, password });
+      setToken(response.token);
+      setUser(response.user);
+      setTokenState(response.token);
+      setUserState(response.user);
+    },
+    [],
+  );
 
   const value = useMemo(
     () => ({
